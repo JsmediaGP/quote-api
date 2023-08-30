@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class quote extends Model
 {
+
+    protected $table = 'quote';
+    protected $fillable = [
+         'content', 'Author', 'category_id'
+    ];
     use HasFactory;
 
     public function category()

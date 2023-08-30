@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('quote', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('category_id');
+            $table->string('content');
+            $table->string('Author');
+            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

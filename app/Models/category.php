@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class category extends Model
 {
+    protected $table = 'category';
+    protected $fillable = ['category'];
     use HasFactory;
 
     public function quotes()
