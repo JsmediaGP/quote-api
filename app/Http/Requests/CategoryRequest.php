@@ -11,7 +11,7 @@ class CategoryRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoryRequest extends FormRequest
     }
     public function messages(){
         return [
-        'category.required' => 'The category field is require',
+        'category.required' => 'The category field is required',
         ];
     }
 }
