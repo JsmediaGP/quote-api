@@ -11,7 +11,7 @@ class QuoteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class QuoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'content'=> ['required', 'string'],
+            'Author'=> ['required', 'string'],
+            'category_id'=> ['required'],
         ];
     }
 }

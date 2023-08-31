@@ -22,7 +22,7 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category'=>'required|string'
+            'category'=> ['required','string'],
         ];
     }
     public function messages(){

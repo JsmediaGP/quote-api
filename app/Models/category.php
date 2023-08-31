@@ -14,7 +14,7 @@ class category extends Model
 
     public function quotes()
     {
-        return $this->hasMany(quote::class);
+        return $this->hasMany(quote::class, 'category_id');
     }
 
 }

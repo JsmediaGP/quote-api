@@ -18,7 +18,7 @@ class CategoryController extends Controller
         ]);
 
     }
-    function categoryStore(CategoryRequest $request){
+    function categoryStore(categoryRequest $request){
 
 
         //picking validation from my CategoryRequest
@@ -28,7 +28,7 @@ class CategoryController extends Controller
 
         return response()->json([
             'status'=>"Success",
-            'message'=> "New category added successfully"
+            'message'=> $newcategory->category. " category added successfully"
         ]);
 
     }
