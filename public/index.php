@@ -32,7 +32,8 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 */
 
 require __DIR__.'/../vendor/autoload.php';
-
+//add the project folder in your
+//example require __DIR__.'/../project/vendor/autoload.php';
 /*
 |--------------------------------------------------------------------------
 | Run The Application
@@ -45,6 +46,12 @@ require __DIR__.'/../vendor/autoload.php';
 */
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
+//add the seame folder name here also
+//then add the following code below 
+// $app->bind('path.public',function(){
+//     return __DIR__;
+// });
+//uncomment the code above 
 
 $kernel = $app->make(Kernel::class);
 

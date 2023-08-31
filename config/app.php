@@ -43,7 +43,7 @@ return [
     */
 
     'debug' => (bool) env('APP_DEBUG', false),
-
+    #CHANGE THE DEBUG TO TRUE
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -123,6 +123,7 @@ return [
     */
 
     'key' => env('APP_KEY'),
+    # add this to the APP KEY base64_decode('XeOgWC7DokNLPh4adsZu4kkmacmWp8sVqqhPRRPBYiE=')
 
     'cipher' => 'AES-256-CBC',
 

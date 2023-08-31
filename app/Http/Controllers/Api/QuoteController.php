@@ -12,10 +12,15 @@ use App\Http\Requests\QuoteRequest;
 class QuoteController extends Controller
 {
     function show(){
-        $quotes = quote::all();
+       
+         $quote = quote::select('id','content', 'Author')->inRandomOrder()->get();
 
-        if($quotes){
-            return  new quoteResource($quotes);
+        if($quote->count()>0){
+           return response()->json([
+            'status'=> "Success",
+            'data'=>$quote
+           ]);
+           // return  new quoteResource($quote);
         }
         else{
             return response()->json([
@@ -46,7 +51,7 @@ class QuoteController extends Controller
     function Quotes($category){
         //this is searching quote based on the category supplied  by the user of the api
         //wherehas is a method to filter quotes that have a related category with the specified name
-        $quotes = quote::select('id','content', 'Author')->whereHas('category', function ($query) use ($category) {
+        $quotes = quote::select('content', 'Author')->whereHas('category', function ($query) use ($category) {
             $query->where('category', $category);
         })->get();
 
